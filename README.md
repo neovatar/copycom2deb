@@ -27,7 +27,7 @@ Clone copycom2deb git repository:
 
 Creating a package
 ------------------
-Change into the cloned repository and simple start the script:
+Change into the cloned repository and start the script:
 
     ./build.sh
     
