@@ -26,7 +26,8 @@ USERID="$MAINTAINER <$EMAIL>"
 echo "Maintainer is $USERID"
 
 msg "Installing dependencies ..."
-sudo apt-get install build-essential debhelper fakeroot curl wget
+BUILDDEPS="build-essential debhelper fakeroot curl wget"
+dpkg -s $BUILDDEPS >/dev/null || sudo apt-get install $BUILDDEPS
 
 msg "Changing to working directory ..."
 pushd `dirname $0`
