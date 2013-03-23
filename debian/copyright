@@ -1,0 +1,18 @@
+Format-Specification: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=135
+Name: copy-agent
+Maintainer: %%USER%%
+Source: https://copy.com/install/linux/Copy.tgz
+
+Copyright: Copyright (c) 2009-2013 Barracuda Networks Inc., All rights reserved.
+License: Propietary license
+
+License: https://www.copy.com/about/tos
+   Copyright (c) 2009-2013 Barracuda Networks Inc., All rights reserved.
+
+   This is a package created from the official installer by using a user
+   contributed script. You are not allowed to distribute the resulting .deb
+   files.
+
+Files: debian/*
+Copyright: 2013 Thomas Seliger <tom@neovatar.org>
+License: public-domain

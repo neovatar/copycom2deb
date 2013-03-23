@@ -1,0 +1,15 @@
+Source: copy-agent
+Section: admin
+Priority: optional
+Maintainer: %%USER%%
+Build-Depends: debhelper (>= 7.0.5)
+Standards-Version: 3.9.1
+Homepage: http://copy.com/
+
+Package: copy-agent
+Architecture: any
+Depends:
+Description: Copy cloud strorage agent
+ This is a package created from the official installer by using a user
+ contributed script. You are not allowed to distribute the resulting .deb
+ files.

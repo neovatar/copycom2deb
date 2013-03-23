@@ -1,0 +1,6 @@
+copy-agent (%%VERSION%%) unstable; urgency=low
+
+  * Packaged installer of the copy agent software from http://copy.com/
+
+ -- %%USER%%  %%DATE%%
+ 

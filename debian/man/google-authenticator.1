@@ -1,0 +1,16 @@
+.TH GOOGLE-AUTHENTICATOR 1 "25 Feb 2011"
+.SH NAME
+google-authenticator \- Two-step verification
+.SH SYNOPSIS
+.B google-authenticator
+.SH DESCRIPTION
+Run the "google-authenticator" binary to create a new secret key in your home directory.
+
+You will be shown a QRCode that you can scan using the Android "Google Authenticator" application. You have the option to manually enter the alphanumeric secret key into the Android "Google Authenticator" application. In either case, after you have added the key, click-and-hold until the context menu shows. Then check that the key's verification value matches.
+
+Each time you log into your system, you will now be prompted for your TOTP code (timebased one-time-password) after having entered your normal user id and your normal UNIX account password.
+.SH "SEE ALSO"
+pam_google_authenticator(8)
+
+http://code.google.com/p/google-authenticator/
+  /wiki/PamModuleInstructions
