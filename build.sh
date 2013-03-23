@@ -9,8 +9,21 @@ msg() {
 
 BUILD_DIR=./build
 DOWNLOAD_URL="https://copy.com/install/linux/Copy.tgz"
-USERID="Thomas Seliger <ts@seliger.it>"
 DATE=`LC_TIME="us" date "+%a, %d %b %Y %T %z"`
+
+msg "Getting maintainer info ..."
+if [ -z "$MAINTAINER" ]; then
+  echo "No maintainer name given, asking ..."
+  echo -n "Enter maintainer name: "
+  read MAINTAINER
+fi
+if [ -z "$EMAIL" ]; then
+  echo "No maintainer email given, asking ..."
+  echo -n "Enter maintainer email: "
+  read EMAIL
+fi
+USERID="$MAINTAINER <$EMAIL>"
+echo "Maintainer is $USERID"
 
 msg "Installing dependencies ..."
 sudo apt-get install build-essential debhelper fakeroot curl wget
@@ -67,13 +80,8 @@ msg "Starting build ..."
 cd ..
 dpkg-buildpackage -rfakeroot
 
-
-#echo "Copying debian files"
-#cp -r ../debian ./libpam-google-authenticator-$VERSION
-
-# echo "Starting build"
-# cd ./libpam-google-authenticator-$VERSION
-# dpkg-buildpackage -rfakeroot
-# cd ..
+msg "Successfully built:"
+cd ..
+ls -al copy-agent_$VERSION*.deb
 
 popd
