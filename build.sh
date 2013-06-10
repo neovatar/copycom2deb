@@ -37,14 +37,17 @@ msg "Changing to build dir ..."
 cd $BUILD_DIR
 
 msg "Getting filename and version ..."
-FILENAME=`curl -s -I $DOWNLOAD_URL | grep "Content-Disposition: inline; filename=" | cut -d'"' -f 2`
+FILENAME=`curl -s -I $DOWNLOAD_URL | grep "Content-Disposition: attachment; filename=" | cut -d'"' -f 2`
 VERSION=`echo $FILENAME | sed -rn 's/^copy_agent-([[:digit:]\.]*).tgz$/\1/p'`
 echo "Filename: $FILENAME"
 echo "Version: $VERSION"
 
-msg "Downloading $DOWNLOAD_URL ..."
-wget -N $DOWNLOAD_URL
-cp Copy.tgz $FILENAME
+if [ -e $FILENAME ]; then
+  echo "File $FILENAME already exists, skipping download."
+else
+  msg "Downloading $FILENAME ..."
+  curl -o $FILENAME $DOWNLOAD_URL
+fi
 
 msg "Extracting agent ..."
 tar xfvz $FILENAME
