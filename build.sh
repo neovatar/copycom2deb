@@ -63,6 +63,7 @@ DEBBUILD=copy-agent-$VERSION
 [ -d $DEBBUILD ] && rm -rf $DEBBUILD
 mkdir -p $DEBBUILD/copy-agent
 cp -r copy/$ARCHDIR/* $DEBBUILD/copy-agent
+cp copy/README $DEBBUILD/copy-agent
 cp -r ../debian $DEBBUILD
 
 msg "Replacing build specific variables ..."
