@@ -55,6 +55,11 @@ The binaries will be linked to /usr/bin, e.g.
 
     /usr/bin/CopyAgent -> /opt/copy-agent/CopyAgent
 
+Install Nautlius Plugin
+-----------------------
+To install the Nautilus plugins:
+    sudo /opt/copy-agent/CopyAgent -installOverlay
+
 Set package creation options
 ----------------------------
 You can control packaging options by setting environment variables like this:
