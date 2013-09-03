@@ -26,6 +26,10 @@ override_dh_strip:
 override_dh_compress:
 
 override_dh_install:
+	mkdir -p $(CURDIR)/copy-agent/usr/lib/nautilus/extensions-3.0
+	fakechroot chroot $(CURDIR)/copy-agent ./CopyAgent -installOverlay
+	mkdir -p $(CURDIR)/debian/copy-agent
+	mv $(CURDIR)/copy-agent/usr $(CURDIR)/debian/copy-agent
 	dh_install copy-agent/ /opt
 
 #get-orig-source:
