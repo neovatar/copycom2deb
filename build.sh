@@ -38,7 +38,7 @@ cd $BUILD_DIR
 
 msg "Getting filename and version ..."
 FILENAME=`curl -s -I $DOWNLOAD_URL | grep "Content-Disposition: attachment; filename=" | cut -d'"' -f 2`
-VERSION=`echo $FILENAME | sed -rn 's/^copy_agent-([[:digit:]\.]*).tgz$/\1/p'`
+VERSION=`echo $FILENAME | sed -rn 's/^Copy-([[:digit:]\.]*).tgz$/\1/p'`
 echo "Filename: $FILENAME"
 echo "Version: $VERSION"
 
